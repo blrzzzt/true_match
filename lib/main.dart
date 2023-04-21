@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Widget> currentMessageList = [];
 
   late TextEditingController _controller;
-  int messageIndex = 2;
+  int messageIndex = 0;
   bool receive = true;
 
   Widget genNewBubble(String message) {
@@ -95,7 +95,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
 
     return Padding(
-      padding: const EdgeInsets.all(24),
+      padding: const EdgeInsets.only(left: 24, right: 24, bottom: 12),
       child: Row(children: receive ? bubbleRow : [bubbleRow[1], bubbleRow[0]]),
     );
   }
@@ -114,8 +114,16 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     _controller = TextEditingController();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       newMessage();
+      receive = !receive;
+      await Future.delayed(Duration(seconds: 3)).then((value) {
+        currentMessageList.add(genNewBubble(messageList[2]));
+        setState(() {
+          currentMessageList;
+          receive = !receive;
+        });
+      });
     });
   }
 
