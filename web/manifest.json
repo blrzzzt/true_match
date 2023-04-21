@@ -1,11 +1,12 @@
 {
-    "name": "true_match",
-    "short_name": "true_match",
-    "start_url": ".",
+    "name": "True Match",
+    "short_name": "True Match",
+    "scope": "/true_match_build/",
+    "start_url": "/true_match_build/",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#ff3b5b",
+    "theme_color": "#ff3b5b",
+    "description": "True Match App for Gillian Movie",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
