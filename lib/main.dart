@@ -165,7 +165,7 @@ class _MyHomePageState extends State<MyHomePage> {
               )),
               Expanded(
                 child: Image.asset(
-                  'trueMatch.png',
+                  'assets/trueMatch.png',
                   fit: BoxFit.fitHeight,
                 ),
               )
